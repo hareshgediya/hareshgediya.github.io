@@ -1,0 +1,8 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f0f0f0"/>
+  <text x="50%" y="50%" font-family="Arial" font-size="24" fill="#666" text-anchor="middle" dominant-baseline="middle">iOS Social Media App</text>
+  <circle cx="370" cy="150" r="12" fill="#4A90E2"/>
+  <circle cx="400" cy="150" r="12" fill="#4A90E2"/>
+  <circle cx="430" cy="150" r="12" fill="#4A90E2"/>
+  <path d="M380 180 L420 180" stroke="#4A90E2" stroke-width="2"/>
+</svg>

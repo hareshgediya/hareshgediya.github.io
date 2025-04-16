@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "title": "Flutter E-Commerce App",
+      "description": "A full-featured e-commerce mobile application built with Flutter, featuring product catalog, shopping cart, user authentication, and payment integration.",
+      "image": "images/flutter-ecommerce.svg",
+      "technologies": ["Flutter", "Dart", "Firebase", "State Management"],
+      "link": "https://github.com/username/flutter-ecommerce"
+    },
+    {
+      "title": "iOS Fitness Tracker",
+      "description": "A comprehensive fitness tracking iOS app that helps users monitor their workouts, set goals, and track progress using HealthKit integration.",
+      "image": "images/ios-fitness.svg",
+      "technologies": ["Swift", "UIKit", "HealthKit", "Core Data"],
+      "link": "https://github.com/username/ios-fitness"
+    },
+    {
+      "title": "Flutter Weather App",
+      "description": "A beautiful weather application built with Flutter that provides real-time weather updates, forecasts, and location-based weather information.",
+      "image": "images/flutter-weather.svg",
+      "technologies": ["Flutter", "Dart", "REST API", "Geolocation"],
+      "link": "https://github.com/username/flutter-weather"
+    },
+    {
+      "title": "iOS Social Media App",
+      "description": "A social media platform built for iOS with features like post sharing, user profiles, direct messaging, and real-time notifications.",
+      "image": "images/ios-social.svg",
+      "technologies": ["Swift", "SwiftUI", "Firebase", "Push Notifications"],
+      "link": "https://github.com/username/ios-social"
+    }
+  ]
+}
