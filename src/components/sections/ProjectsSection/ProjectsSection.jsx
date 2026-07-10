@@ -16,12 +16,10 @@ const ProjectsSection = ({ scrollController }) => {
 
   // Responsive breakpoints
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [isTablet, setIsTablet] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
-      setIsTablet(window.innerWidth < 1024);
     };
 
     window.addEventListener('resize', handleResize);
@@ -101,7 +99,7 @@ const ProjectsSection = ({ scrollController }) => {
       <div className={styles.spacing12}></div>
       
       <p className={`${styles.subtitle} ${isMobile ? styles.subtitleMobile : ''}`}>
-        Featured Projects & Case Studies
+        Client apps live on the App Store & Play Store
       </p>
       
       <div className={styles.spacing32}></div>
@@ -125,6 +123,60 @@ const ProjectsSection = ({ scrollController }) => {
     if (position < -1) return 'far-left';
     if (position > 1) return 'far-right';
     return 'hidden';
+  };
+
+  const buildStoreBadges = (project, compact = false) => {
+    const badges = [];
+
+    if (project.appStoreUrl) {
+      badges.push(
+        <a
+          key="app-store"
+          href={project.appStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.storeBadge} ${styles.appStoreBadge}`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          App Store
+        </a>
+      );
+    }
+
+    if (project.playStoreUrl) {
+      badges.push(
+        <a
+          key="play-store"
+          href={project.playStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.storeBadge} ${styles.playStoreBadge}`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          Play Store
+        </a>
+      );
+    }
+
+    if (!badges.length && project.platforms?.length) {
+      return (
+        <div className={`${styles.storeBadges} ${compact ? styles.storeBadgesCompact : ''}`}>
+          {project.platforms.slice(0, compact ? 2 : 3).map((platform) => (
+            <span key={platform} className={styles.platformBadge}>
+              {platform}
+            </span>
+          ))}
+        </div>
+      );
+    }
+
+    if (!badges.length) return null;
+
+    return (
+      <div className={`${styles.storeBadges} ${compact ? styles.storeBadgesCompact : ''}`}>
+        {badges}
+      </div>
+    );
   };
 
   const buildProjectCard = (project, index, isMobileCard = false) => {
@@ -177,14 +229,16 @@ const ProjectsSection = ({ scrollController }) => {
                 
                 {/* Project Description */}
                 <p className={`${styles.projectDescription} ${isMobileCard ? styles.projectDescriptionMobile : ''}`}>
-                  {project.detailedDescription.split('\n')[0].replace(/\*\*/g, '')}
+                  {project.shortDescription}
                 </p>
               </div>
+
+              {buildStoreBadges(project, isMobileCard)}
               
               {/* Technologies */}
               <div className={styles.technologiesContainer}>
-                {project.technologies.slice(0, isMobileCard ? 2 : 3).map((tech, index) => (
-                  <span key={index} className={styles.techBadge}>
+                {project.technologies.slice(0, isMobileCard ? 2 : 3).map((tech, techIndex) => (
+                  <span key={techIndex} className={styles.techBadge}>
                     {tech}
                   </span>
                 ))}
@@ -197,6 +251,7 @@ const ProjectsSection = ({ scrollController }) => {
             <div className={styles.sideCardInfo}>
               <h3 className={styles.sideCardTitle}>{project.title}</h3>
               <div className={styles.sideCardCategory}>{project.category}</div>
+              {buildStoreBadges(project, true)}
             </div>
           )}
         </div>

@@ -41,48 +41,32 @@ const ExperienceSection = () => {
               // Start card animations with staggered delay
               if (ExperienceData?.experiences) {
                 ExperienceData.experiences.forEach((_, index) => {
-                 
                   setTimeout(() => {
-                
                     setVisibleCards(prev => new Set(prev).add(index));
                   }, 200 + (index * 200));
                 });
-              } else {
-               
               }
             }
           }
         });
       },
       {
-        threshold: 0.1, // Reduced threshold for easier triggering
-        rootMargin: '0px' // Removed negative margins for easier triggering
+        threshold: 0.1,
+        rootMargin: '0px'
       }
     );
 
-    if (sectionRef.current) {
-    
-      observer.observe(sectionRef.current);
-    } else {
-     
+    const sectionElement = sectionRef.current;
+    if (sectionElement) {
+      observer.observe(sectionElement);
     }
 
     return () => {
-   
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (sectionElement) {
+        observer.unobserve(sectionElement);
       }
     };
   }, [hasAnimated]);
-
-  const DefaultLogo = ({ companyName }) => {
-  
-    return (
-      <div className={styles.defaultLogo}>
-        {companyName?.substring(0, 1).toUpperCase() || '?'}
-      </div>
-    );
-  };
 
   const ExperienceCard = ({ experience, index, isMobile }) => {
    
@@ -313,7 +297,7 @@ const MobileCardContent = ({ experience }) => {
         
         <h2 className={styles.mainTitle}>EXPERIENCE</h2>
         
-        <p className={styles.subtitle}>Professional Journey & Milestones</p>
+        <p className={styles.subtitle}>iOS, Flutter & client product delivery</p>
         
         {/* Decorative elements */}
         <div className={styles.decorativeElements}>

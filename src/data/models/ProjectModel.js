@@ -8,7 +8,12 @@ export class ProjectModel {
     videoUrl,
     technologies,
     category,
-    completionDate
+    completionDate,
+    websiteUrl = null,
+    appStoreUrl = null,
+    playStoreUrl = null,
+    platforms = [],
+    featured = true,
   }) {
     this.id = id;
     this.title = title;
@@ -19,19 +24,33 @@ export class ProjectModel {
     this.technologies = technologies;
     this.category = category;
     this.completionDate = completionDate;
+    this.websiteUrl = websiteUrl;
+    this.appStoreUrl = appStoreUrl;
+    this.playStoreUrl = playStoreUrl;
+    this.platforms = platforms;
+    this.featured = featured;
   }
 
-  static fromJson(json) {
+  get hasStoreLinks() {
+    return Boolean(this.appStoreUrl || this.playStoreUrl || this.websiteUrl);
+  }
+
+  static fromJson(json, thumbnailUrl = null) {
     return new ProjectModel({
       id: json.id,
       title: json.title,
       shortDescription: json.shortDescription,
       detailedDescription: json.detailedDescription,
-      thumbnailUrl: json.thumbnailUrl,
+      thumbnailUrl: thumbnailUrl ?? json.thumbnailUrl ?? null,
       videoUrl: json.videoUrl,
-      technologies: [...json.technologies],
+      technologies: [...(json.technologies || [])],
       category: json.category,
-      completionDate: new Date(json.completionDate)
+      completionDate: json.completionDate ? new Date(json.completionDate) : null,
+      websiteUrl: json.websiteUrl ?? null,
+      appStoreUrl: json.appStoreUrl ?? null,
+      playStoreUrl: json.playStoreUrl ?? null,
+      platforms: [...(json.platforms || [])],
+      featured: json.featured ?? true,
     });
   }
 
@@ -45,7 +64,12 @@ export class ProjectModel {
       videoUrl: this.videoUrl,
       technologies: [...this.technologies],
       category: this.category,
-      completionDate: this.completionDate.toISOString()
+      completionDate: this.completionDate?.toISOString?.() ?? this.completionDate,
+      websiteUrl: this.websiteUrl,
+      appStoreUrl: this.appStoreUrl,
+      playStoreUrl: this.playStoreUrl,
+      platforms: [...this.platforms],
+      featured: this.featured,
     };
   }
 }

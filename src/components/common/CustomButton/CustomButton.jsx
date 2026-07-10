@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import styles from './CustomButton.module.css';
 
 const CustomNavBar = ({
@@ -17,14 +17,14 @@ const CustomNavBar = ({
   const navItems = ['About', 'Portfolio', 'Experience', 'Skills', 'Contact'];
   
   // Map sections to their refs for dynamic position detection
-  const sectionRefs = {
+  const sectionRefs = useMemo(() => ({
     'Hero': heroRef,
     'About': aboutRef,
     'Portfolio': portfolioRef,
     'Experience': experienceRef,
     'Skills': skillsRef,
     'Contact': contactRef,
-  };
+  }), [heroRef, aboutRef, portfolioRef, experienceRef, skillsRef, contactRef]);
 
   // Check if mobile on resize
   const checkMobile = useCallback(() => {
@@ -36,7 +36,6 @@ const CustomNavBar = ({
     try {
       const currentScrollOffset = window.pageYOffset;
       const screenHeight = window.innerHeight;
-      const navHeight = 80; // AppDimensions.navHeight equivalent
 
       // Define viewport bounds considering navbar height
       const viewportCenter = currentScrollOffset + (screenHeight * 0.3); // Top 30% of screen
@@ -55,7 +54,7 @@ const CustomNavBar = ({
             const rect = sectionRef.current.getBoundingClientRect();
             const adjustedPosition = rect.top + currentScrollOffset;
             sectionPositions.push({ name: sectionName, position: adjustedPosition });
-          } catch (e) {
+          } catch {
             continue;
           }
         }

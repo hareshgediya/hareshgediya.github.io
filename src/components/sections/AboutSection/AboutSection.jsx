@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import styles from './AboutSection.module.css';
 import myProfile from '../../../assets/images/profile.png'
 
-const AboutSection = ({ scrollController }) => {
+const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef(null);

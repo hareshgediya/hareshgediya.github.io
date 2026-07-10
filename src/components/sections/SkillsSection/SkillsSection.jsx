@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './SkillsSection.module.css';
 import { SkillsRepository } from '../../../data/repositories/skillsData';
 
-const SkillsSection = ({ scrollController = null }) => {
+const SkillsSection = () => {
   const [allSkills, setAllSkills] = useState([]);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -227,7 +227,7 @@ const SkillsSection = ({ scrollController = null }) => {
   }, []);
 
   // Handle card click
-  const handleCardClick = useCallback((skill, index) => {
+  const handleCardClick = useCallback((skill) => {
     console.log(`Clicked on ${skill.name}`, skill);
   }, []);
 
@@ -301,7 +301,7 @@ const SkillsSection = ({ scrollController = null }) => {
               key={skill.id}
               className={`${styles.skillCard} ${cardAnimations[index] ? styles.animated : ''}`}
               style={{ animationDelay: `${index * 80}ms` }}
-              onClick={() => handleCardClick(skill, index)}
+              onClick={() => handleCardClick(skill)}
               tabIndex={0}
               role="button"
               aria-label={`${skill.name} skill`}
