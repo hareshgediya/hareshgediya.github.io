@@ -6,7 +6,6 @@ const HeroSection = ({ contactRef, scrollController }) => {
   const { isMobile, isTablet } = useResponsive();
   
   // Animation states
-  const [isVisible, setIsVisible] = useState(false);
   const [animationPhase, setAnimationPhase] = useState(0);
   
   // Refs for animations
@@ -16,8 +15,6 @@ const HeroSection = ({ contactRef, scrollController }) => {
   
   // Faster sequential animations
   useEffect(() => {
-    setIsVisible(true);
-    
     const timeouts = [
       setTimeout(() => setAnimationPhase(1), 100),   // greeting
       setTimeout(() => setAnimationPhase(2), 250),   // name
@@ -122,7 +119,7 @@ const HeroSection = ({ contactRef, scrollController }) => {
           <div 
             className={`${styles.title} ${animationPhase >= 3 ? styles.visible : ''}`}
           >
-            <span className={styles.titleBadge}>Mobile Application Developer</span>
+            <span className={styles.titleBadge}>iOS & Flutter Developer</span>
           </div>
           
           {/* Quote */}

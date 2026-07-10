@@ -142,12 +142,13 @@
 
 .mobileCarouselTrack {
   display: flex;
-  width: calc(100% * 5); /* 5 items */
+  width: 100%;
   height: 100%;
   transition: transform 0.4s ease-in-out;
 }
 
 .mobileCarouselSlide {
+  min-width: 100%;
   width: 100%;
   height: 100%;
   display: flex;
@@ -449,6 +450,59 @@
   font-weight: 500;
   color: #000000;
   font-family: var(--font-primary);
+}
+
+.storeBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.storeBadgesCompact {
+  margin-top: 8px;
+  gap: 6px;
+}
+
+.storeBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.storeBadge:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.appStoreBadge {
+  background: #0A0A0A;
+  color: #FFFFFF;
+}
+
+.playStoreBadge {
+  background: #1B5E20;
+  color: #FFFFFF;
+}
+
+.platformBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  font-family: var(--font-primary);
+  color: #212121;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 /* Navigation Arrows */

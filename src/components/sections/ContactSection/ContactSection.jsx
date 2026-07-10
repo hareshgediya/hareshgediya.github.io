@@ -63,7 +63,7 @@ const ContactSection = () => {
 
     if (!formData.email.trim()) {
       errors.email = 'Please enter your email';
-    } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
+    } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
       errors.email = 'Please enter a valid email';
     }
 
@@ -111,10 +111,6 @@ const ContactSection = () => {
 
   const handleEmailClick = (email) => {
     window.location.href = `mailto:${email}`;
-  };
-
-  const handlePhoneClick = (phone) => {
-    window.location.href = `tel:${phone}`;
   };
 
   const handleSocialClick = (platform) => {

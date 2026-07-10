@@ -450,6 +450,45 @@
   color: #000;
 }
 
+.storeLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.storeLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.storeLink:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.appStoreLink {
+  background: #0A0A0A;
+  color: #FFFFFF;
+}
+
+.playStoreLink {
+  background: #1B5E20;
+  color: #FFFFFF;
+}
+
+.websiteLink {
+  background: #F6F2EF;
+  color: #0A0A0A;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
 .description {
   line-height: 1.6;
   color: #666;

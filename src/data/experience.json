@@ -1,0 +1,119 @@
+{
+  "experiences": [
+    {
+      "id": "exp_001",
+      "company": "SV Ventures",
+      "position": "iOS & Flutter Developer",
+      "duration": "2024 - Present",
+      "location": "Remote",
+      "type": "Full-time",
+      "description": "Working as an iOS & Flutter Developer at SV Ventures, building and shipping production mobile applications for multiple clients. Responsible for end-to-end mobile development across iOS and Android, delivering App Store and Play Store ready products with clean architecture, strong performance, and polished user experiences.",
+      "responsibilities": [
+        "Developed and shipped client mobile apps live on the App Store and Google Play Store",
+        "Built cross-platform Flutter applications and native iOS features with Swift",
+        "Owned feature delivery from design collaboration through store release and maintenance",
+        "Integrated REST APIs, Firebase services, and third-party SDKs for production apps",
+        "Optimized app performance, stability, and store compliance across iOS and Android",
+        "Collaborated with designers and stakeholders to deliver polished, client-ready experiences",
+        "Maintained clean architecture, reusable components, and scalable project structure",
+        "Supported releases, hotfixes, and iterative improvements based on user feedback"
+      ],
+      "technologies": [
+        "iOS",
+        "Swift",
+        "SwiftUI",
+        "UIKit",
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "REST APIs",
+        "Provider",
+        "Bloc",
+        "Git",
+        "App Store Connect",
+        "Google Play Console"
+      ],
+      "companyLogo": null,
+      "companyWebsite": null,
+      "isCurrentJob": true
+    },
+    {
+      "id": "exp_002",
+      "company": "TUDO Inc.",
+      "position": "Mobile Application Developer",
+      "duration": "May 2020 - 2024",
+      "location": "(USA) Remote",
+      "type": "Freelance",
+      "description": "Worked as a Mobile Application Developer, leading the development and maintenance of two major Flutter applications built from scratch. Responsible for managing the full mobile development team, implementing GraphQL APIs, ensuring high performance, and delivering seamless user experiences across all devices. Focused on clean architecture, scalable solutions, and mentoring team members in Flutter best practices.",
+      "responsibilities": [
+        "Led the mobile development team, managing project timelines and coordinating tasks across members",
+        "Developed and maintained two major Flutter applications built from scratch",
+        "Integrated and optimized GraphQL APIs for efficient data management",
+        "Mentored junior developers and interns in Flutter and mobile best practices",
+        "Implemented robust testing strategies ensuring high code quality and maintainability",
+        "Optimized application performance, resolved complex technical challenges, and ensured smooth user experiences",
+        "Participated in architectural decisions, establishing scalable and maintainable Flutter project structures",
+        "Conducted comprehensive code reviews and enforced team development standards"
+      ],
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "GraphQL",
+        "Firebase",
+        "PostgreSQL",
+        "REST APIs",
+        "Provider",
+        "Bloc",
+        "Git",
+        "Jira",
+        "Trello",
+        "nTask"
+      ],
+      "companyLogo": null,
+      "companyWebsite": null,
+      "isCurrentJob": false
+    },
+    {
+      "id": "exp_003",
+      "company": "Kartum Infotech",
+      "position": "iOS & Flutter Developer",
+      "duration": "June 2018 - May 2020",
+      "location": "Surat, India",
+      "type": "Full-time",
+      "description": "Collaborated with an international team to build innovative iOS (Swift, UIKit) and Flutter applications. Focused on developing responsive interfaces for iPhone and iPad, implementing clean architecture, optimizing performance, and delivering seamless cross-platform user experiences across multiple projects.",
+      "responsibilities": [
+        "Developed and maintained 10+ iOS applications and 4+ Flutter applications",
+        "Led mobile development initiatives as the iOS lead while mentoring junior developers and interns in Flutter",
+        "Handled project management and coordinated mobile development across the team",
+        "Implemented robust testing strategies achieving 95% code coverage across mobile projects",
+        "Collaborated with international teams using agile methodologies and modern workflows",
+        "Optimized application performance and resolved complex technical challenges",
+        "Participated in architectural decisions for mobile technology stacks",
+        "Conducted comprehensive code reviews and established mobile development best practices"
+      ],
+      "technologies": [
+        "iOS",
+        "Swift",
+        "UIKit",
+        "SwiftUI",
+        "MVVM",
+        "CoreData",
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "REST APIs",
+        "Provider",
+        "Bloc",
+        "SQLite",
+        "Git",
+        "Jira",
+        "Trello",
+        "Figma",
+        "Sketch"
+      ],
+      "companyLogo": null,
+      "companyWebsite": "https://kartuminfotech.com",
+      "isCurrentJob": false
+    }
+  ]
+}
